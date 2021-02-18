@@ -1,5 +1,6 @@
 # Created by https://www.gitignore.io
 staticfiles/
+static_cdn_test
 ### OSX ###
 .DS_Store
 .AppleDouble
