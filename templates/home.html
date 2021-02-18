@@ -1,13 +1,17 @@
 {% extends "base.html" %}
+
 <div class="row">
-    <div class="col-md-6 offset-md-3">
+    <div class="col-md-8 mx-auto">
         {% block head_title %}Welcome to my blog!{% endblock %}
     </div>
 </div>
+
 {% block content %}
-
-<h1>{{ title }}</h1>
-
+<div class="row">
+    <div class="col-md-6 mx-auto text-center">
+        <h1>{{ title }}</h1>
+    </div>
+</div>
 {% for a in blog_list %}
     {% include "blog/list-inline.html" with blog_post=a truncate=True detail=False %}
 {% endfor %}

@@ -45,6 +45,7 @@ def blog_post_update_view(request, slug):
     context = {"title": f"Update {obj.title}", "form": form}
     return render(request, template_name, context)
 
+@staff_member_required
 def blog_post_delete_view(request, slug):
     obj = get_object_or_404(BlogPost, slug=slug)
     template_name = "blog/delete.html"
