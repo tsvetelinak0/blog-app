@@ -20,12 +20,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=qtc&^xf5)kw=!bl5%792cv7y$bnte&426-r()yryx@916lfnj'
+# SECRET_KEY = '=qtc&^xf5)kw=!bl5%792cv7y$bnte&426-r()yryx@916lfnj'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['lastgasp.herokuapp.com']
 
 LOGIN_URL = "/login"
 # Application definition
