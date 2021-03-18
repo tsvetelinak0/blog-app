@@ -21,15 +21,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = '=qtc&^xf5)kw=!bl5%792cv7y$bnte&426-r()yryx@916lfnj'
-SECRET_KEY = os.environ.get('SECRET_KEY')
+SECRET_KEY = '=qtc&^xf5)kw=!bl5%792cv7y$bnte&426-r()yryx@916lfnj'
+# SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+# DEBUG = (os.environ.get('DEBUG_VALUE') == 'True')
+DEBUG = True
 
-ALLOWED_HOSTS = ['lastgasp.herokuapp.com']
+# ALLOWED_HOSTS = ['lastgasp.herokuapp.com']
+ALLOWED_HOSTS = []
 
 LOGIN_URL = "/login"
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -39,9 +42,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'crispy_forms',
     
     'blog',
     'searches',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -124,14 +130,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOCAL_STATIC_CDN_PATH = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn_test')
+# LOCAL_STATIC_CDN_PATH = os.path.join(os.path.dirname(BASE_DIR), 'static_cdn_test')
 
-STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static') #live cdn AWS S£
-STATICFILES = [
-    os.path.join(BASE_DIR, 'staticfiles')
-]
+# STATIC_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'static') #live cdn AWS S£
+# STATICFILES = [
+#     os.path.join(BASE_DIR, 'staticfiles')
+# ]
 
-MEDIA_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'media')
-MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'media')
+# MEDIA_URL = '/media/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 django_heroku.settings(locals())

@@ -6,19 +6,18 @@ from .forms import ContactForm
 from blog.models import BlogPost
 
 
-def home_page(request):
-    my_title = "Hello there...."
+def home(request):
     qs = BlogPost.objects.all()[:5]
-    context = {"title": "Welcome to my blog", 'blog_list': qs}
+    context = {"title": "Welcome to holus-bolus!", 'blog_list': qs}
     return render(request, "home.html", context)
 
 
-def about_page(request):
+def about(request):
     return render(request, "about.html", {"title": "About"})
 
 
 
-def contact_page(request):
+def contact(request):
     form = ContactForm(request.POST or None)
     if form.is_valid():
         print(form.cleaned_data)
