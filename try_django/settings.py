@@ -31,8 +31,6 @@ DEBUG = True
 # ALLOWED_HOSTS = ['lastgasp.herokuapp.com']
 ALLOWED_HOSTS = []
 
-LOGIN_URL = "/login"
-
 # Application definition
 
 INSTALLED_APPS = [
@@ -137,9 +135,12 @@ STATIC_URL = '/static/'
 #     os.path.join(BASE_DIR, 'staticfiles')
 # ]
 
-# MEDIA_ROOT = os.path.join(LOCAL_STATIC_CDN_PATH, 'media')
-# MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+LOGIN_REDIRECT_URL = 'blog-home'
+LOGIN_URL = 'login'
 
 django_heroku.settings(locals())
