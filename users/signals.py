@@ -14,3 +14,4 @@ def create_profile(sender, instance, created, **kwargs):
 def save_profile(sender, instance, **kwargs):
     instance.profile.save()
 
+# signals not working - check models for blogpost - replace user with author, maybe?
